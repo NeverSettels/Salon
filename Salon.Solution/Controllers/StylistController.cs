@@ -41,5 +41,20 @@ namespace Salon.Controllers
             thisStylist.Clients = _db.Clients.Where(client => client.StylistId == id).ToList();
             return View(thisStylist);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var thisStylist = _db.Stylists.FirstOrDefault(stylists => stylists.StylistId == id);
+            ViewBag.StylistId = new SelectList(_db.Clients, "ClientId", "Name");
+            return View(thisStylist);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Stylist stylist)
+        {
+            _db.Entry(stylist).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

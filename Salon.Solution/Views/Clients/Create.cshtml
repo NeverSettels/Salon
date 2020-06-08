@@ -1,0 +1,26 @@
+  
+@{
+  Layout = "_Layout";
+}
+
+@model Salon.Models.Client
+
+<h4>Add a new client</h4>
+<div class="container">
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+<br>  
+    @Html.LabelFor(model => model.PreferredStylist)
+    @Html.TextBoxFor(model => model.PreferredStylist)
+<br>
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
+
+    <input type="submit" value="Add new client" class="btn btn-success" />
+}
+
+</div>
+<p>@Html.ActionLink("Show all clients", "Index")</p>

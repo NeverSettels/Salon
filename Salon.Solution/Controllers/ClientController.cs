@@ -35,4 +35,5 @@ namespace Salon.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-    }}
+    }
+    }

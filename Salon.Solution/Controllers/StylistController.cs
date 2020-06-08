@@ -56,5 +56,12 @@ namespace Salon.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+         public ActionResult Delete(int id)
+        {
+            var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+            _db.Stylists.Remove(thisStylist);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

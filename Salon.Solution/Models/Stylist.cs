@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 
-namespace HairSalon.Models
+namespace Salon.Models
 {
-    public class Salons
+
+    public class Stylist
     {
         public Stylist()
         {

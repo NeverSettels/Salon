@@ -11,4 +11,4 @@ namespace Salon.Models
         public virtual Stylist Stylist { get; set; }
     }
    
-    }
+}
